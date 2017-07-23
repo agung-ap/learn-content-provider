@@ -16,7 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        
+        <provider
+            android:authorities="id.developer.agungaprian.belajarcontentprovider"
+            android:name=".StudentProvider"
+            android:exported="false"/>
     </application>
 
 </manifest>

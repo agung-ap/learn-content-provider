@@ -21,7 +21,7 @@ import java.util.HashMap;
 
 public class StudentProvider extends ContentProvider {
     static final String PROVIDER_NAME = "id.developer.agungaprian.belajarcontentprovider";
-    static final String URL = "content://" + PROVIDER_NAME + "/students";
+    static final String URL = "content://" + PROVIDER_NAME + "/StudentProvider";
     static final Uri CONTENT_URI = Uri.parse(URL);
 
     static final String _ID = "_id";
@@ -119,7 +119,13 @@ public class StudentProvider extends ContentProvider {
 
     @Override
     public String getType( Uri uri) {
-        return null;
+        switch (uriMatcher.match(uri)){
+            //get all student record
+            case STUDENT:
+                return "vnd.android.cursor.dir/vnd.id.developer.student";
+            default:
+                throw new IllegalArgumentException("unsupported uri : " + uri);
+        }
     }
 
     @Override

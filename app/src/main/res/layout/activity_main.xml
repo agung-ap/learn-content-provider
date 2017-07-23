@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,12 +7,76 @@
     tools:context="id.developer.agungaprian.belajarcontentprovider.MainActivity">
 
     <TextView
+        android:id="@+id/content_provider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Content provider"
+        android:layout_marginTop="32dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="30dp" />
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/student_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Student Record "
+        android:textColor="@color/colorPrimary"
+        android:textSize="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/content_provider"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/name_et"
+        android:layout_marginTop="64dp"
+        android:layout_below="@+id/student_record"
+        android:layout_alignLeft="@+id/student_record"
+        android:layout_alignStart="@+id/student_record"
+        android:layout_alignRight="@+id/student_record"
+        android:layout_alignEnd="@+id/student_record"
+        android:hint="Name"
+        android:textColorHint="@android:color/holo_blue_light" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/grade_et"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/name_et"
+        android:layout_alignLeft="@+id/name_et"
+        android:layout_alignStart="@+id/name_et"
+        android:layout_alignRight="@+id/name_et"
+        android:layout_alignEnd="@+id/name_et"
+        android:hint="Grade"
+        android:textColorHint="@android:color/holo_blue_bright" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_name"
+        android:text="Add Name"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/grade_et"
+        android:layout_alignRight="@+id/grade_et"
+        android:layout_alignEnd="@+id/grade_et"
+        android:layout_alignLeft="@+id/grade_et"
+        android:layout_alignStart="@+id/grade_et"
+        android:onClick="onClickAddName"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Retrive student"
+        android:id="@+id/retrieve_student"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/add_name"
+        android:layout_alignRight="@+id/add_name"
+        android:layout_alignEnd="@+id/add_name"
+        android:layout_alignLeft="@+id/add_name"
+        android:layout_alignStart="@+id/add_name"
+        android:onClick="onClickRetrieveStudents"/>
+
+</RelativeLayout>
